@@ -36,7 +36,7 @@ public class RobotContainer {
 
   // The operator's controller
   private final CommandXboxController operatorController = new CommandXboxController(
-      OperatorConstants.OPERATOR_CONTROLLER_PORT);
+      OperatorConstants.DRIVER_CONTROLLER_PORT);
 
   // The autonomous chooser
   private final SendableChooser<Command> autoChooser = new SendableChooser<>();
