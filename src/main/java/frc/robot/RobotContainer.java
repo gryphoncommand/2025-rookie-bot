@@ -84,7 +84,7 @@ public class RobotContainer {
     // joystick matches the WPILib convention of counter-clockwise positive
     driveSubsystem.setDefaultCommand(new DriveCommand(
         () -> -driverController.getLeftY() *
-            (driverController.getHID().getRightBumperButton() ? 1 : 0.5),
+            (driverController.getHID().getRightBumperButton() ? 0.5 : 1),
         () -> -driverController.getRightX(),
         driveSubsystem));
 
