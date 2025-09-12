@@ -12,6 +12,7 @@ import frc.robot.Constants.OperatorConstants;
 import frc.robot.Constants.RollerConstants;
 import frc.robot.commands.AutoCommand;
 import frc.robot.commands.DriveCommand;
+import frc.robot.commands.OnePiece;
 import frc.robot.commands.RollerCommand;
 import frc.robot.subsystems.CANDriveSubsystem;
 import frc.robot.subsystems.CANRollerSubsystem;
@@ -51,7 +52,8 @@ public class RobotContainer {
     // Set the options to show up in the Dashboard for selecting auto modes. If you
     // add additional auto modes you can add additional lines here with
     // autoChooser.addOption
-    autoChooser.setDefaultOption("Autonomous", new AutoCommand(driveSubsystem));
+    autoChooser.setDefaultOption("OnePiece", new OnePiece(driveSubsystem, rollerSubsystem));
+    autoChooser.addOption("Autonomous", new AutoCommand(driveSubsystem));
   }
 
   /**
