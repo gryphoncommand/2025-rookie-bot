@@ -94,8 +94,8 @@ public class RobotContainer {
     // RollerCommand with the values provided by the triggers on the operator
     // controller
     rollerSubsystem.setDefaultCommand(new RollerCommand(
-        () -> operatorController.getRightTriggerAxis() / 2,
-        () -> operatorController.getLeftTriggerAxis() / 2,
+        () -> operatorController.getRightTriggerAxis() * 0.7,
+        () -> operatorController.getLeftTriggerAxis() * 0.7,
         rollerSubsystem));
   }
 
