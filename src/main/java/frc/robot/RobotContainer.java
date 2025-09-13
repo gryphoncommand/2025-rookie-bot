@@ -13,6 +13,7 @@ import frc.robot.Constants.RollerConstants;
 import frc.robot.commands.AutoCommand;
 import frc.robot.commands.DriveCommand;
 import frc.robot.commands.OnePiece;
+import frc.robot.commands.PushOnePiece;
 import frc.robot.commands.RollerCommand;
 import frc.robot.subsystems.CANDriveSubsystem;
 import frc.robot.subsystems.CANRollerSubsystem;
@@ -54,6 +55,8 @@ public class RobotContainer {
     // autoChooser.addOption
     autoChooser.setDefaultOption("OnePiece", new OnePiece(driveSubsystem, rollerSubsystem));
     autoChooser.addOption("Autonomous", new AutoCommand(driveSubsystem));
+
+    autoChooser.addOption("PushOnePiece", new PushOnePiece(driveSubsystem, rollerSubsystem));
   }
 
   /**
@@ -94,7 +97,7 @@ public class RobotContainer {
     // RollerCommand with the values provided by the triggers on the operator
     // controller
     rollerSubsystem.setDefaultCommand(new RollerCommand(
-        () -> operatorController.getRightTriggerAxis() * 0.6,
+        () -> operatorController.getRightTriggerAxis() * 0.5,
         () -> operatorController.getLeftTriggerAxis() * 0.4,
         rollerSubsystem));
   }
