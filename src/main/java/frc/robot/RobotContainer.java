@@ -85,8 +85,7 @@ public class RobotContainer {
     // value). Similarly for the X axis where we need to flip the value so the
     // joystick matches the WPILib convention of counter-clockwise positive
     driveSubsystem.setDefaultCommand(new DriveCommand(
-        () -> -driverController.getLeftY() *
-            (driverController.getHID().getRightBumperButton() ? 0.7 : 1),
+        () -> -driverController.getLeftY(),
         () -> -driverController.getRightX(),
         driveSubsystem));
 
@@ -94,7 +93,7 @@ public class RobotContainer {
     // RollerCommand with the values provided by the triggers on the operator
     // controller
     rollerSubsystem.setDefaultCommand(new RollerCommand(
-        () -> operatorController.getRightTriggerAxis() * 0.5,
+        () -> (driverController.getHID().getRightBumperButton() ? 0.6 : operatorController.getRightTriggerAxis() * 0.6),
         () -> operatorController.getLeftTriggerAxis() * 0.4,
         rollerSubsystem));
   }
